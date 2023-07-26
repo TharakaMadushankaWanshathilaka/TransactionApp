@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace TransactionApp.Models
 {
@@ -21,5 +22,7 @@ namespace TransactionApp.Models
         public string SWIFTCode { get; set; }
 
         public string Amount { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }

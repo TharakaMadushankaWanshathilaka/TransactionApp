@@ -26,24 +26,6 @@ namespace TransactionApp.Controllers
                           Problem("Entity set 'TransactionDbContext.Transaction'  is null.");
         }
 
-        // GET: Transaction/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Transaction == null)
-            {
-                return NotFound();
-            }
-
-            var transactionModel = await _context.Transaction
-                .FirstOrDefaultAsync(m => m.TransactionId == id);
-            if (transactionModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(transactionModel);
-        }
-
         // GET: Transaction/Create
         public IActionResult Create()
         {
