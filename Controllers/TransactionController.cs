@@ -29,7 +29,7 @@ namespace TransactionApp.Controllers
         // GET: Transaction/AddOrEdit
         public async Task<IActionResult> AddOrEdit(int id = 0)
         {   if (id == 0)
-                return View();
+                return View(new TransactionModel() );
             else
             {
                 var transactionModel = await _context.Transaction.FindAsync(id);
@@ -73,12 +73,12 @@ namespace TransactionApp.Controllers
             return View(transactionModel);
         }
 
-        // POST: Transaction/Edit/5
+        // POST: Transaction/AddOrEdit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TransactionId,AccountNumber,BeneficiaryName,BankName,SWIFTCode,Amount")] TransactionModel transactionModel)
+        public async Task<IActionResult> AddOrEdit(int id, [Bind("TransactionId,AccountNumber,BeneficiaryName,BankName,SWIFTCode,Amount,Date")] TransactionModel transactionModel)
         {
             if (id != transactionModel.TransactionId)
             {
