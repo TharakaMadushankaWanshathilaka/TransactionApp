@@ -36,6 +36,7 @@ namespace TransactionApp.Models
         [Required(ErrorMessage = "This field is required!")]
         public string Amount { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Date { get; set; }
     }
 }
