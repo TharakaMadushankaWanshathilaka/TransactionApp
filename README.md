@@ -1,4 +1,4 @@
 # TransactionApp
-This is a normal CRUD make for practice ASP.net with AJAX
+This is a normal CRUD App made for practice ASP.net with AJAX
 
 
